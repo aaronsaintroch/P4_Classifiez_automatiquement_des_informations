@@ -1,16 +1,29 @@
-# This is a sample Python script.
+from pathlib import Path
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import numpy as np
+import pandas as pd
+import shap
+import sklearn
+import xgboost
 
+print("=== ENVIRONNEMENT OK ===")
+print(f"pandas: {pd.__version__}")
+print(f"numpy: {np.__version__}")
+print(f"scikit-learn: {sklearn.__version__}")
+print(f"shap: {shap.__version__}")
+print(f"xgboost: {xgboost.__version__}")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+df = pd.DataFrame({
+    "a": [1, 2, 3],
+    "b": [4, 5, 6],
+})
 
+print("\n=== TEST DATAFRAME ===")
+print(df)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+PROJECT_ROOT = Path.cwd().resolve()
+DATA_RAW = PROJECT_ROOT / "data" / "raw"
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print("\n=== CHEMINS PROJET ===")
+print(f"PROJECT_ROOT: {PROJECT_ROOT}")
+print(f"DATA_RAW: {DATA_RAW}")
