@@ -11,6 +11,7 @@ dependencies = [
     "jupyterlab>=4.5.6",
     "matplotlib>=3.10.8",
     "missingno>=0.5.2",
+    "notebook>=7.5.5",
     "numpy>=2.4.4",
     "pandas>=3.0.2",
     "pd>=0.0.4",
@@ -24,3 +25,8 @@ dependencies = [
 
 [tool.uv]
 package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]
