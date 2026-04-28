@@ -39,7 +39,7 @@ Thumbs.db
 /data/interim/
 /data/processed/
 /reports/figures/
-/reports/presentation/
+
 
 # Local environment files
 .env
