@@ -1,52 +1,6 @@
-
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environments
 .venv/
-venv/
-env/
-ENV/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Build / packaging
-build/
-dist/
-*.egg-info/
-.eggs/
-
-# Test / coverage
-.pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
-
-# IDE / editors
 .idea/
-.vscode/
-*.iml
-
-# OS files
+.ipynb_checkpoints/
 .DS_Store
-Thumbs.db
-
-# Project data
-/data/interim/
-/data/processed/
-/reports/figures/
-
-
-# Local environment files
-.env
-.env.*
-
-# uv
-uv.lock
-
-# Logs
-*.log
+*.pyc
+__pycache__/
