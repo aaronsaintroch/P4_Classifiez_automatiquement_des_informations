@@ -1,0 +1,41 @@
+DROP TABLE IF EXISTS df_central_reference;
+
+CREATE TABLE df_central_reference (
+    "id_employee" TEXT,
+    "age" TEXT,
+    "genre" TEXT,
+    "revenu_mensuel" TEXT,
+    "statut_marital" TEXT,
+    "departement" TEXT,
+    "poste" TEXT,
+    "nombre_experiences_precedentes" TEXT,
+    "nombre_heures_travailless" TEXT,
+    "annee_experience_totale" TEXT,
+    "annees_dans_l_entreprise" TEXT,
+    "annees_dans_le_poste_actuel" TEXT,
+    "satisfaction_employee_environnement" TEXT,
+    "note_evaluation_precedente" TEXT,
+    "niveau_hierarchique_poste" TEXT,
+    "satisfaction_employee_nature_travail" TEXT,
+    "satisfaction_employee_equipe" TEXT,
+    "satisfaction_employee_equilibre_pro_perso" TEXT,
+    "eval_number" TEXT,
+    "note_evaluation_actuelle" TEXT,
+    "heure_supplementaires" TEXT,
+    "augementation_salaire_precedente" TEXT,
+    "a_quitte_l_entreprise" TEXT,
+    "nombre_participation_pee" TEXT,
+    "nb_formations_suivies" TEXT,
+    "nombre_employee_sous_responsabilite" TEXT,
+    "code_sondage" TEXT,
+    "distance_domicile_travail" TEXT,
+    "niveau_education" TEXT,
+    "domaine_etude" TEXT,
+    "ayant_enfants" TEXT,
+    "frequence_deplacement" TEXT,
+    "annees_depuis_la_derniere_promotion" TEXT,
+    "annes_sous_responsable_actuel" TEXT,
+    "attrition_bin" TEXT
+);
+
+\copy df_central_reference ("id_employee", "age", "genre", "revenu_mensuel", "statut_marital", "departement", "poste", "nombre_experiences_precedentes", "nombre_heures_travailless", "annee_experience_totale", "annees_dans_l_entreprise", "annees_dans_le_poste_actuel", "satisfaction_employee_environnement", "note_evaluation_precedente", "niveau_hierarchique_poste", "satisfaction_employee_nature_travail", "satisfaction_employee_equipe", "satisfaction_employee_equilibre_pro_perso", "eval_number", "note_evaluation_actuelle", "heure_supplementaires", "augementation_salaire_precedente", "a_quitte_l_entreprise", "nombre_participation_pee", "nb_formations_suivies", "nombre_employee_sous_responsabilite", "code_sondage", "distance_domicile_travail", "niveau_education", "domaine_etude", "ayant_enfants", "frequence_deplacement", "annees_depuis_la_derniere_promotion", "annes_sous_responsable_actuel", "attrition_bin") FROM '/Users/vincentdesmouceaux/P4_Classifiez_automatiquement_des_informations/data/processed/df_central.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', NULL '');

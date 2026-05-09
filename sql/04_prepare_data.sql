@@ -4,6 +4,7 @@ CREATE VIEW vw_hr_prepared AS
 SELECT
     s.id_employee,
 
+    -- Données SIRH
     s.age,
     s.genre,
     s.revenu_mensuel,
@@ -16,13 +17,17 @@ SELECT
     s.annees_dans_l_entreprise,
     s.annees_dans_le_poste_actuel,
 
+    -- Identifiant sondage
+    so.code_sondage,
+
+    -- Données sondage
     so.a_quitte_l_entreprise,
 
     CASE
         WHEN LOWER(so.a_quitte_l_entreprise) = 'oui' THEN 1
         WHEN LOWER(so.a_quitte_l_entreprise) = 'non' THEN 0
         ELSE NULL
-    END AS attrition_flag,
+    END AS attrition_bin,
 
     so.nombre_participation_pee,
     so.nb_formations_suivies,
@@ -35,6 +40,10 @@ SELECT
     so.annees_depuis_la_derniere_promotion,
     so.annes_sous_responsable_actuel,
 
+    -- Identifiant évaluation
+    e.eval_number,
+
+    -- Données évaluation
     e.satisfaction_employee_environnement,
     e.note_evaluation_precedente,
     e.niveau_hierarchique_poste,
@@ -44,6 +53,10 @@ SELECT
     e.note_evaluation_actuelle,
     e.heure_supplementaires,
 
+    -- Colonne brute conservée comme dans le fichier source
+    e.augementation_salaire_precedente,
+
+    -- Colonne nettoyée en SQL : '11 %' devient 11
     REPLACE(REPLACE(e.augementation_salaire_precedente, '%', ''), ' ', '')::INTEGER
         AS augmentation_salaire_precedente_pct
 
